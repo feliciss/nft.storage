@@ -87,6 +87,7 @@ export default class DropzoneDialogExample extends Component<
             open={this.state.open}
             onSave={this.handleSave.bind(this)}
             acceptedFiles={["image/*", "application/pdf", "video/*", "audio/*"]}
+            filesLimit={100}
             showPreviews={true}
             maxFileSize={104857600}
             onClose={this.handleClose.bind(this)}
