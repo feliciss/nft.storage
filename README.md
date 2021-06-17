@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+# NFT.Storage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NFT.Storage is an application frontend of the community project: [shipyard/nft.storage](https://github.com/ipfs-shipyard/nft.storage)
 
-## Available Scripts
+![Homepage](./public/screenshot/homepage.png)
 
-In the project directory, you can run:
+## Usage
 
-### `yarn start`
+Displays steps to use the NFT.Storage application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Uploading NFTs
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Upload your NFTs by clicking `Upload to nft storage`:
 
-### `yarn test`
+![Upload](./public/screenshot/upload-file.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Select one or more NFTs, then click submit:
 
-### `yarn build`
+![Select](./public/screenshot/selected-files.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After submitted, a CID with an IPFS gateway link will be printed:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Uploaded](./public/screenshot/uploaded.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Inspect uploaded NFTs
 
-### `yarn eject`
+Navigate to the printed CID gateway link, if it's a folder it will display as a tree:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Folder](./public/screenshot/cid-folder.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+And to view a NFT inside a CID folder:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![View](./public/screenshot/view-file.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Get the uploaded NFT status
 
-## Learn More
+Navigate to status tab of NFT.Storage, and input any CID representing a NFT:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Input](./public/screenshot/input-cid.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If a CID exists in nft.storage, then the status and information of the CID will be displayed as table:
+
+![Info](./public/screenshot/cid-info.png)
+
+A NFT needs time to be minted, so there is only the IPFS pinning state of new uploaded NFT at this time.
+
+If a CID does not exists in nft.storage, an error message alerting the NFT status will be prompted:
+
+![Not Found](./public/screenshot/not-found.png)
+
+## File type supports
+
+A listed file type that NFT.Storage can upload:
+
+- PDF
+- Any images (png, jpeg, gif, etc.)
+- Any videos (mp4, mov, flv, etc.)
+- Any audios (mp3, aac, wav, etc.)
+
+## File limits
+
+Current file limits is per 100MB a file, as same as [nft.storage](https://nft.storage/).
+
+## What is different
+
+In this stage, nothing different but multiple files uploading to [nft.storage](https://nft.storage/). In the future, we will add support to display NFT market that with nft stored in [nft.storage](https://nft.storage/) and support the newest functionalities of the [SDK](https://github.com/ipfs-shipyard/nft.storage/tree/main/packages/client).
